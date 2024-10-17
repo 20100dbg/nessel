@@ -6,6 +6,10 @@ def handler(signal_received, frame):
     print("\n\nCaught Ctrl+C, stopping...")
     recherche = False
 
+def pretty_frq(frq):
+    strfrq = str(frq/1000000)
+    strfrq = strfrq.ljust(7, '0')
+    return strfrq + 'M'
 
 def encoder(frequence):
     return frequence.to_bytes(4, 'big')

@@ -13,10 +13,16 @@ signal(SIGINT, handler)
 global recherche
 recherche = True
 
-l = lora()
+canal = 18
+adresse = 1
+
+l = lora(canal, adresse)
 l.activer()
 
-s = scanner()
+frequence_debut = 400e6
+frequence_fin = 440e6
+
+s = scanner(frequence_debut, frequence_fin)
 s.activer()
 
 
